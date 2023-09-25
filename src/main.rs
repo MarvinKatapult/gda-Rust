@@ -10,7 +10,7 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
 
-    let content = std::fs::read_to_string(&args.path).expect("du lutscher die file existiert nich");
+    let content = std::fs::read_to_string(&args.path).expect("file not found");
 
     for line in content.lines() {
         if line.contains(&args.pattern) {
